@@ -29,11 +29,11 @@ We operate under a few constraints:
     and vertical seperators.)
 """
 
-from itertools import*;m,p,q,r,s,l=dict(enumerate([2,7,6,9,5,1,4,3,8])),[[],[]],0,print,'─┼─┼─',' │ │ ';b=[*map(list,[l,s,l,s,l])]
+from itertools import*;m,p,q,r,s,l=dict(enumerate("276951438")),[[],[]],0,print,'─┼─┼─',' │ │ ';b=[*map(list,[l,s,l,s,l])]
 def f(): r('\n'.join(map(''.join,b)))
 f()
 while m:
- i=int(input(f'P{q} move: '))-1;u=m.pop(i);p[q]+=[u];b[~(i//3*2)][i%3*2]='XO'[q];f()
+ i=int(input(f'P{q} move: '))-1;u=int(m.pop(i));p[q]+=[u];b[~(i//3*2)][i%3*2]='XO'[q];f()
  if any(sum(d)==15for d in combinations(p[q],3)):r(f'P{q} wins');m=0
  elif not m:r('Draw')
  q^=1
