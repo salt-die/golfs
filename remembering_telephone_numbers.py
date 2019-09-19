@@ -23,6 +23,3 @@ def f(n):
         if a<=m and b<e:
             e=b;m=a;p=k
     return " ".join(p)
-
-In [74]: f("12345678901")
-Out[74]: '1234 567 8901'
