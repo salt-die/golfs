@@ -38,8 +38,8 @@ possible_groupings = [phone_number[i:j]
 number_of_leading_zeros = sum(not int(group[0]) for group in possible_groupings)
 
 #sort by leading_zeros and then by length of list
-best_grouping = sorted((number_of_leading_zeros, len(possible_groupings),
-                        possible_groupings))[0][2]
+best_grouping = sorted((number_of_leading_zeros, len(grouping),
+                        grouping for grouping in possible_groupings))[0][2]
 
 #add spaces between the groups
 Then we return " ".join(best_grouping)
