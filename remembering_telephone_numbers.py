@@ -35,7 +35,7 @@ possible_groupings = [phone_number[i:j]
                                      slicings_for_partition[1:])]
 
 #count the number of leading zeros in each grouping
-number_of_leading_zeros = sum(not int(group[0]) for group in possible_groupings)
+number_of_leading_zeros = sum(not int(grouping[0]))# for grouping in possible_groupings
 
 #sort by leading_zeros and then by length of list
 best_grouping = sorted((number_of_leading_zeros, len(grouping), grouping)
