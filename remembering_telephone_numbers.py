@@ -25,7 +25,7 @@ unordered_partitions = [[3,2,2,2,2],[4,3,2,2],[3,3,3,2],[4,4,3]]
 ordered_partitions = set.union(*({*permutations(unordered_partition)}
                                 for unordered_partition in unordered_partitions))
 
-#we use accumulate to give use our start and end indices for each grouping
+#we use accumulate to give our start and end indices for each grouping
 slicings_for_partition = [[0]+[accumulate(partition)]
                           for partition in ordered_partitions]
 
