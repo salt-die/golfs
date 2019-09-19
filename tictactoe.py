@@ -9,8 +9,8 @@ Note that all the rows, columns, and diagonals sum to 15.
 We translate a player's move into a magic square value and then check if any
 combinations of 3 moves from a player sum to 15. If any do, they win!
 
-p is the list of the two players moves. (p[0] for player 0's moves, p[1] for
-player 1's)
+p is the list of the two players moves. (p[0] for player X's moves, p[1] for
+player O's)
 
 q is which player's turn it is.
 
@@ -29,11 +29,11 @@ We operate under a few constraints:
     and vertical seperators.)
 """
 
-from itertools import*;m,p,q,r,s,l=dict(enumerate("276951438")),[[],[]],0,print,'─┼─┼─',' │ │ ';b=[*map(list,[l,s,l,s,l])]
-def f(): r('\n'.join(map(''.join,b)))
+from itertools import*;m,p,q,r,s,l,a=dict(enumerate("276951438")),[[],[]],0,print,' │ │ ','─┼─┼─','XO';b=[*map(list,[s,l,s,l,s])]
+def f():r('\n'.join(map(''.join,b)))
 f()
 while m:
- i=int(input(f'P{q} move: '))-1;p[q]+=[int(m.pop(i))];b[~(i//3*2)][i%3*2]='XO'[q];f()
- if any(sum(d)==15for d in combinations(p[q],3)):r(f'P{q} wins');m=0
+ i=int(input(a[q]+' move: '))-1;p[q]+=[int(m.pop(i))];b[~(i//3*2)][i%3*2]=a[q];f()
+ if any(sum(d)==15for d in combinations(p[q],3)):r(a[q]+' wins');m=0
  elif not m:r('Draw')
  q^=1
