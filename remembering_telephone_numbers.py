@@ -15,5 +15,4 @@ From python discord:
 My golf attempt uses the knowledge that all the un-ordered legal partitions of
 an 11-digit number are [[3,2,2,2,2],[4,3,2,2],[3,3,3,2],[4,4,3]].
 """
-from itertools import*
-def g(n):return " ".join(sorted((sum(not int(l[0])for l in k),len(k),k)for k in[[n[v:k]for v,k in zip(t[:-1],t[1:])]for t in[[0]+[*accumulate(j)]for r in[[3,2,2,2,2],[4,3,2,2],[3,3,3,2],[4,4,3]]for j in{*permutations(r)}]])[0][2])
+from itertools import*;p=lambda h:" ".join(sorted((sum(not int(f[0])for f in g),len(g),g)for g in[[h[d:e]for d,e in zip(c[:-1],c[1:])]for c in[[0]+[*accumulate(b)]for a in[[3,2,2,2,2],[4,3,2,2],[3,3,3,2],[4,4,3]]for b in{*permutations(a)}]])[0][2])
