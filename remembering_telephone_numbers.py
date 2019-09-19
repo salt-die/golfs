@@ -24,4 +24,4 @@ def f(n):
                       for j in{*permutations(r)}]]:
         a=sum(not int(l[0])for l in k);b=len(k)
         if(a==m and b<e)or a<m:e=b;m=a;p=k
-    return " ".join(p)
+    return" ".join(p)
