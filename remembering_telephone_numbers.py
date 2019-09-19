@@ -45,4 +45,3 @@ best_grouping = sorted((number_of_leading_zeros, len(possible_groupings),
 Then we return " ".join(best_grouping)
 """
 from itertools import*;p=lambda h:" ".join(sorted((sum(not int(f[0])for f in g),len(g),g)for g in[[h[d:e]for d,e in zip(c[:-1],c[1:])]for c in[[0]+[*accumulate(b)]for a in[[3,2,2,2,2],[4,3,2,2],[3,3,3,2],[4,4,3]]for b in{*permutations(a)}]])[0][2])
-
