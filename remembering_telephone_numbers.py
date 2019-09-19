@@ -41,8 +41,8 @@ number_of_leading_zeros = sum(not int(group[0]) for group in possible_groupings)
 best_grouping = sorted((number_of_leading_zeros, len(grouping), grouping)
                         for grouping in possible_groupings)[0][2]
 
-#add spaces between the groups
-Then we return " ".join(best_grouping)
+#add spaces between the groups and return
+return " ".join(best_grouping)
 
 Note if you want to do arbitrary length numbers, you'll need to calculate
 the un-ordered partitions:
