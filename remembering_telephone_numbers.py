@@ -43,5 +43,12 @@ best_grouping = sorted((number_of_leading_zeros, len(grouping), grouping)
 
 #add spaces between the groups
 Then we return " ".join(best_grouping)
+
+Note if you want to do arbitrary length numbers, you'll need to calculate
+the un-ordered partitions:
+    #all un-ordered partitions of length n
+    def g(n,i=1,l=[],r=[]):n or r.append(l);i>n or[g(n-i,i,[i]+l),g(n,i+1,l)];return r
+    #all un-ordered partitions with length of the groupings between 2 and 4
+    def h(n):return [l for l in g(n)if all(1<n<5 for n in l)]
 """
 from itertools import*;p=lambda h:" ".join(sorted((sum(not int(f[0])for f in g),len(g),g)for g in[[h[d:e]for d,e in zip(c[:-1],c[1:])]for c in[[0]+[*accumulate(b)]for a in[[3,2,2,2,2],[4,3,2,2],[3,3,3,2],[4,4,3]]for b in{*permutations(a)}]])[0][2])
