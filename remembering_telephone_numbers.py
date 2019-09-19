@@ -19,7 +19,7 @@ from itertools import*
 def f(n):
     m=e=5
     for k in[[n[v:k]for v,k in zip(t[:-1],t[1:])]for t in[[0]+[*accumulate(j)]for r in[[3,2,2,2,2],[4,3,2,2],[3,3,3,2],[4,4,3]]for j in{*permutations(r)}]]:
-        a=sum(1 if not int(l[0]) else 0 for l in k);b=len(k)
+        a=sum(0 if int(l[0])else 1 for l in k);b=len(k)
         if a<=m and b<e:
             e=b;m=a;p=k
     return " ".join(p)
