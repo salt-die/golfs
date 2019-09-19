@@ -22,6 +22,6 @@ def f(n):
              for t in[[0]+[*accumulate(j)]
                       for r in[[3,2,2,2,2],[4,3,2,2],[3,3,3,2],[4,4,3]]
                       for j in{*permutations(r)}]]:
-        a=sum(not int(l[0]) for l in k);b=len(k)
+        a=sum(not int(l[0])for l in k);b=len(k)
         if(a==m and b<e)or a<m:e=b;m=a;p=k
     return " ".join(p)
